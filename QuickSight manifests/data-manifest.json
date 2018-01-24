@@ -1,0 +1,10 @@
+{
+  "fileLocations": [
+    {"URIPrefixes": ["https://s3.amazonaws.com/iot-poc-kinesis/data/"]}
+  ],
+  "globalUploadSettings": {
+    "format": "CSV",
+    "delimiter": ",",
+    "containsHeader": "false"
+  }
+}

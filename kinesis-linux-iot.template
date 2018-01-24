@@ -1,0 +1,720 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "b149cc39-7548-4918-92cf-e65387381e6e": {
+                "source": {
+                    "id": "6af6a07f-af73-4c0c-a3ba-1de39bb861bb"
+                },
+                "target": {
+                    "id": "988c178d-d2f6-4edc-be4f-48884a5153be"
+                },
+                "z": 1
+            },
+            "c53edeb6-aaef-4e01-b6e4-42f57e0d9d08": {
+                "source": {
+                    "id": "6f6d0d08-a3a5-4750-b0c2-7008c8206d40"
+                },
+                "target": {
+                    "id": "988c178d-d2f6-4edc-be4f-48884a5153be"
+                },
+                "z": 2
+            },
+            "ac943aff-6fcd-466c-b572-9eea5999c53d": {
+                "source": {
+                    "id": "8fbdeec2-de68-4164-aa5f-421261ddbf3c"
+                },
+                "target": {
+                    "id": "988c178d-d2f6-4edc-be4f-48884a5153be"
+                },
+                "z": 3
+            },
+            "52fb2e38-6f20-487e-bd18-e91afe0de745": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 690,
+                    "y": 120
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "31e0d454-4ed9-442f-b0b0-6b4064af95b5": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 690,
+                    "y": 40
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "ddbe1549-660a-48f3-81dd-cbfeb9d91822": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 510,
+                    "y": 120
+                },
+                "z": 1,
+                "embeds": [],
+                "isassociatedwith": [
+                    "52fb2e38-6f20-487e-bd18-e91afe0de745"
+                ],
+                "isrelatedto": [
+                    "31e0d454-4ed9-442f-b0b0-6b4064af95b5"
+                ]
+            },
+            "b2b8d2df-7910-4c6c-a40a-215d100cbe2a": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 390,
+                    "y": -70
+                },
+                "z": 0,
+                "embeds": [],
+                "dependson": [
+                    "ddbe1549-660a-48f3-81dd-cbfeb9d91822"
+                ],
+                "isrelatedto": [
+                    "31e0d454-4ed9-442f-b0b0-6b4064af95b5",
+                    "52fb2e38-6f20-487e-bd18-e91afe0de745"
+                ]
+            },
+            "09a5636d-a2a1-4c47-b526-3ca1e0ca9326": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 390,
+                    "y": 210
+                },
+                "z": 1,
+                "embeds": [],
+                "dependson": [
+                    "ddbe1549-660a-48f3-81dd-cbfeb9d91822"
+                ],
+                "isrelatedto": [
+                    "31e0d454-4ed9-442f-b0b0-6b4064af95b5",
+                    "52fb2e38-6f20-487e-bd18-e91afe0de745"
+                ]
+            },
+            "d8bb183e-ed96-48b6-a87b-3eb99de45d16": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 390,
+                    "y": 40
+                },
+                "z": 1,
+                "embeds": [],
+                "dependson": [
+                    "ddbe1549-660a-48f3-81dd-cbfeb9d91822"
+                ],
+                "isrelatedto": [
+                    "31e0d454-4ed9-442f-b0b0-6b4064af95b5",
+                    "52fb2e38-6f20-487e-bd18-e91afe0de745"
+                ]
+            },
+            "36236eb4-cd14-4279-bbc8-00970f19324d": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 280,
+                    "y": 160
+                },
+                "z": 1,
+                "embeds": [],
+                "isrelatedto": [
+                    "53bc677e-fa56-4e5d-a61d-5ead0de587d5",
+                    "d8bb183e-ed96-48b6-a87b-3eb99de45d16",
+                    "09a5636d-a2a1-4c47-b526-3ca1e0ca9326",
+                    "b2b8d2df-7910-4c6c-a40a-215d100cbe2a"
+                ]
+            },
+            "5ffde790-f597-4e05-bc78-617bfa3d716b": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 180,
+                    "y": 60
+                },
+                "z": 1,
+                "embeds": [],
+                "isrelatedto": [
+                    "b2b8d2df-7910-4c6c-a40a-215d100cbe2a",
+                    "36236eb4-cd14-4279-bbc8-00970f19324d",
+                    "09a5636d-a2a1-4c47-b526-3ca1e0ca9326"
+                ]
+            },
+            "c5b1b2f7-05c1-495d-9ef0-c561493c9118": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 70,
+                    "y": -70
+                },
+                "z": 1,
+                "embeds": [],
+                "dependson": [
+                    "5ffde790-f597-4e05-bc78-617bfa3d716b"
+                ],
+                "isrelatedto": [
+                    "d8bb183e-ed96-48b6-a87b-3eb99de45d16",
+                    "36236eb4-cd14-4279-bbc8-00970f19324d",
+                    "5ffde790-f597-4e05-bc78-617bfa3d716b"
+                ]
+            },
+            "3394d97e-ef7f-475e-af4b-1d1fffbca32a": {
+                "source": {
+                    "id": "c5b1b2f7-05c1-495d-9ef0-c561493c9118",
+                    "selector": "g:nth-child(1) g:nth-child(4) g:nth-child(1) circle:nth-child(1)     ",
+                    "port": "AWS::DependencyLink-*"
+                },
+                "target": {
+                    "id": "5ffde790-f597-4e05-bc78-617bfa3d716b"
+                },
+                "z": 3
+            },
+            "edc8f85e-5bf0-41d3-a29c-89285e1413fe": {
+                "source": {
+                    "id": "c5b1b2f7-05c1-495d-9ef0-c561493c9118",
+                    "selector": "g:nth-child(1) g:nth-child(4) g:nth-child(1) circle:nth-child(1)     ",
+                    "port": "AWS::DependencyLink-*"
+                },
+                "target": {
+                    "id": "5ffde790-f597-4e05-bc78-617bfa3d716b"
+                },
+                "z": 3
+            },
+            "4d65b780-ddac-44a3-88c1-ba6bf5977846": {
+                "source": {
+                    "id": "c5b1b2f7-05c1-495d-9ef0-c561493c9118",
+                    "selector": "g:nth-child(1) g:nth-child(4) g:nth-child(1) circle:nth-child(1)     ",
+                    "port": "AWS::DependencyLink-*"
+                },
+                "target": {
+                    "id": "5ffde790-f597-4e05-bc78-617bfa3d716b"
+                },
+                "z": 3
+            },
+            "a69af6d1-37b6-4e5f-a498-8b16b11c9a8d": {
+                "source": {
+                    "id": "c5b1b2f7-05c1-495d-9ef0-c561493c9118",
+                    "selector": "g:nth-child(1) g:nth-child(4) g:nth-child(1) circle:nth-child(1)     ",
+                    "port": "AWS::DependencyLink-*"
+                },
+                "target": {
+                    "id": "5ffde790-f597-4e05-bc78-617bfa3d716b"
+                },
+                "z": 3
+            },
+            "474a9789-7ef4-4f92-a3e0-e2665aebe398": {
+                "source": {
+                    "id": "c5b1b2f7-05c1-495d-9ef0-c561493c9118",
+                    "selector": "g:nth-child(1) g:nth-child(4) g:nth-child(1) circle:nth-child(1)     ",
+                    "port": "AWS::DependencyLink-*"
+                },
+                "target": {
+                    "id": "5ffde790-f597-4e05-bc78-617bfa3d716b"
+                },
+                "z": 3
+            },
+            "7b201f76-cfee-4b38-8711-84e521243cec": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 70,
+                    "y": 300
+                },
+                "z": 1,
+                "embeds": [],
+                "dependson": [
+                    "5ffde790-f597-4e05-bc78-617bfa3d716b"
+                ],
+                "isrelatedto": [
+                    "5ffde790-f597-4e05-bc78-617bfa3d716b",
+                    "09a5636d-a2a1-4c47-b526-3ca1e0ca9326",
+                    "36236eb4-cd14-4279-bbc8-00970f19324d",
+                    "53bc677e-fa56-4e5d-a61d-5ead0de587d5"
+                ]
+            },
+            "53bc677e-fa56-4e5d-a61d-5ead0de587d5": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 690,
+                    "y": 300
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "98c7e58a-25ec-48cb-a810-57f37988999e": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 390,
+                    "y": 400
+                },
+                "z": 1,
+                "embeds": [],
+                "isrelatedto": [
+                    "77dffcae-a48b-44fa-bdf6-22ee571c2bff",
+                    "fee543c5-a957-479a-b96c-e2643eb1fb3c"
+                ]
+            },
+            "20154d71-d1f6-4917-9b88-167c02e58364": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 280,
+                    "y": 400
+                },
+                "z": 1,
+                "embeds": [],
+                "isassociatedwith": [
+                    "98c7e58a-25ec-48cb-a810-57f37988999e"
+                ],
+                "isrelatedto": [
+                    "53bc677e-fa56-4e5d-a61d-5ead0de587d5"
+                ]
+            },
+            "77dffcae-a48b-44fa-bdf6-22ee571c2bff": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 510,
+                    "y": 400
+                },
+                "z": 1,
+                "embeds": [],
+                "isrelatedto": [
+                    "53bc677e-fa56-4e5d-a61d-5ead0de587d5"
+                ]
+            },
+            "fee543c5-a957-479a-b96c-e2643eb1fb3c": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 510,
+                    "y": 520
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "4dd515c2-5697-45f5-b861-23a306c3756f": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 400,
+                    "y": 520
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "fee543c5-a957-479a-b96c-e2643eb1fb3c"
+                ]
+            }
+        }
+    },
+    "Mappings" : {
+
+    },
+    "Resources": {
+        "DeliveryStreamSource": {
+            "DependsOn": [
+                "deliveryPolicy"
+            ],
+            "Type": "AWS::KinesisFirehose::DeliveryStream",
+            "Properties": {
+                "DeliveryStreamName": "linux-iot-source",
+                "S3DestinationConfiguration": {
+                    "BucketARN": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "arn:aws:s3:::",
+                                {
+                                    "Ref": "s3bucket"
+                                }
+                            ]
+                        ]
+                    },
+                    "BufferingHints": {
+                        "IntervalInSeconds": "60",
+                        "SizeInMBs": "50"
+                    },
+                    "CompressionFormat": "UNCOMPRESSED",
+                    "Prefix": "source/",
+                    "RoleARN": {
+                        "Fn::GetAtt": [
+                            "deliveryRole",
+                            "Arn"
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b2b8d2df-7910-4c6c-a40a-215d100cbe2a"
+                }
+            }
+        },
+        "DeliveryStreamDestination": {
+            "DependsOn": [
+                "deliveryPolicy"
+            ],
+            "Type": "AWS::KinesisFirehose::DeliveryStream",
+            "Properties": {
+                "DeliveryStreamName": "linux-iot-processed",
+                "S3DestinationConfiguration": {
+                    "BucketARN": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "arn:aws:s3:::",
+                                {
+                                    "Ref": "s3bucket"
+                                }
+                            ]
+                        ]
+                    },
+                    "BufferingHints": {
+                        "IntervalInSeconds": "60",
+                        "SizeInMBs": "50"
+                    },
+                    "CompressionFormat": "UNCOMPRESSED",
+                    "Prefix": "data/",
+                    "RoleARN": {
+                        "Fn::GetAtt": [
+                            "deliveryRole",
+                            "Arn"
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "d8bb183e-ed96-48b6-a87b-3eb99de45d16"
+                }
+            }
+        },
+        "s3bucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": "linux-iot",
+                "VersioningConfiguration": {
+                    "Status": "Enabled"
+                },
+                "LifecycleConfiguration": {
+                    "Rules": [
+                        {
+                            "Id": "GlacierRule",
+                            "Prefix": "glacier",
+                            "Status": "Enabled",
+                            "ExpirationInDays": "30",
+                            "Transitions": [
+                                {
+                                    "TransitionInDays": "1",
+                                    "StorageClass": "GLACIER"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "31e0d454-4ed9-442f-b0b0-6b4064af95b5"
+                }
+            }
+        },
+        "KinesisAnalyticsIoT": {
+            "Type": "AWS::KinesisAnalytics::Application",
+            "Properties": {
+                "ApplicationName": "linux-iot-app",
+                "Inputs": [
+                    {
+                        "NamePrefix": "raw",
+                        "InputSchema": {
+                            "RecordColumns": [
+                            ],
+                            "RecordFormat": {
+                                "RecordFormatType": "JSON",
+                                "MappingParameters": {
+                                    "JSONMappingParameters": {
+                                        "RecordRowPath": "$"
+                                    }
+                                }
+                            }
+                        },
+                        "KinesisFirehoseInput": {
+                            "ResourceARN": {
+                                "Fn::GetAtt": [
+                                    "DeliveryStreamSource",
+                                    "Arn"
+                                ]
+                            },
+                            "RoleARN": {
+                                "Fn::GetAtt": [
+                                    "KinesisAnalyticsRole",
+                                    "Arn"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "5ffde790-f597-4e05-bc78-617bfa3d716b"
+                }
+            }
+        },
+        "ApplicationOutputs": {
+            "DependsOn": [
+                "KinesisAnalyticsIoT"
+            ],
+            "Type": "AWS::KinesisAnalytics::ApplicationOutput",
+            "Properties": {
+                "ApplicationName": {
+                    "Ref": "KinesisAnalyticsIoT"
+                },
+                "Output": {
+                    "Name": "DESTINATION_CSV_STREAM",
+                    "DestinationSchema": {
+                        "RecordFormatType": "CSV"
+                    },
+                    "KinesisFirehoseOutput": {
+                        "ResourceARN": {
+                            "Fn::GetAtt": [
+                                "DeliveryStreamDestination",
+                                "Arn"
+                            ]
+                        },
+                        "RoleARN": {
+                            "Fn::GetAtt": [
+                                "KinesisAnalyticsRole",
+                                "Arn"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "c5b1b2f7-05c1-495d-9ef0-c561493c9118"
+                }
+            }
+        },
+        "KinesisAnalyticsRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": "kinesisanalytics.amazonaws.com"
+                            },
+                            "Action": "sts:AssumeRole"
+                        }
+                    ]
+                },
+                "Path": "/",
+                "Policies": [
+                    {
+                        "PolicyName": "LinuxIoTKinesisAnalyticsPolicy",
+                        "PolicyDocument": {
+                            "Version": "2012-10-17",
+                            "Statement": [
+                                {
+                                    "Sid": "WriteOutputFirehose",
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "firehose:DescribeDeliveryStream",
+                                        "firehose:PutRecord",
+                                        "firehose:PutRecordBatch"
+                                    ],
+                                    "Resource": [
+                                        {
+                                            "Fn::GetAtt": [
+                                                "DeliveryStreamDestination",
+                                                "Arn"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Sid": "ReadInputFirehose",
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "firehose:DescribeDeliveryStream",
+                                        "firehose:Get*"
+                                    ],
+                                    "Resource": [
+                                        {
+                                            "Fn::GetAtt": [
+                                                "DeliveryStreamSource",
+                                                "Arn"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "36236eb4-cd14-4279-bbc8-00970f19324d"
+                }
+            }
+        },
+        "deliveryRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": "firehose.amazonaws.com"
+                            },
+                            "Action": "sts:AssumeRole",
+                            "Condition": {
+                                "StringEquals": {
+                                    "sts:ExternalId": {
+                                        "Ref": "AWS::AccountId"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "ManagedPolicyArns": [
+                    "arn:aws:iam::aws:policy/AmazonKinesisAnalyticsFullAccess"
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "52fb2e38-6f20-487e-bd18-e91afe0de745"
+                }
+            }
+        },
+        "deliveryPolicy": {
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyName": "LinuxIoTKinesisDeliveryPolicy",
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Action": [
+                                "s3:AbortMultipartUpload",
+                                "s3:GetBucketLocation",
+                                "s3:GetObject",
+                                "s3:ListBucket",
+                                "s3:ListBucketMultipartUploads",
+                                "s3:PutObject"
+                            ],
+                            "Resource": [
+                                {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "arn:aws:s3:::",
+                                            {
+                                                "Ref": "s3bucket"
+                                            }
+                                        ]
+                                    ]
+                                },
+                                {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "arn:aws:s3:::",
+                                            {
+                                                "Ref": "s3bucket"
+                                            },
+                                            "*"
+                                        ]
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Roles": [
+                    {
+                        "Ref": "deliveryRole"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "ddbe1549-660a-48f3-81dd-cbfeb9d91822"
+                }
+            }
+        }
+    },
+    "Outputs": {
+        "SourceFirehose": {
+            "Description": "Source Firehose to recibe input data into the stream",
+            "Export": {
+                "Name": {
+                    "Fn::Join": [
+                        ":",
+                        [
+                            {
+                                "Ref": "AWS::StackName"
+                            },
+                            "sourceFirehose"
+                        ]
+                    ]
+                }
+            },
+            "Value": {
+                "Ref": "DeliveryStreamSource"
+            }
+        }
+    }
+}

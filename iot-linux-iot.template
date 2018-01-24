@@ -1,0 +1,256 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "IoTPolicy": {
+      "Type": "AWS::IoT::Policy",
+      "Properties": {
+        "PolicyName": "iot-poc-policy-open",
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "iot:*"
+              ],
+              "Resource": [
+                "*"
+              ]
+            }
+          ]
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "1e0c7b7b-70bb-4499-ae3e-86ba97c881df"
+        }
+      }
+    },
+    "policyPrincipalAttachment": {
+      "Type": "AWS::IoT::PolicyPrincipalAttachment",
+      "Properties": {
+        "PolicyName": {
+          "Ref": "IoTPolicy"
+        },
+        "Principal": {
+          "Ref": "CertificateArn"
+        }
+      }
+    },
+    "IoTThing": {
+      "Type": "AWS::IoT::Thing",
+      "Properties": {
+        "ThingName": "BoxThing",
+        "AttributePayload": {
+          "Attributes": {
+            "myAttributeA": "MyAttributeValueA",
+            "myAttributeB": "MyAttributeValueB",
+            "myAttributeC": "MyAttributeValueC"
+          }
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "5bad84cf-2b87-4876-ab46-6d48f4f4c499"
+        }
+      }
+    },
+    "thingPrincipalAttachment": {
+      "Type": "AWS::IoT::ThingPrincipalAttachment",
+      "Properties": {
+        "ThingName": {
+          "Ref": "IoTThing"
+        },
+        "Principal": {
+          "Ref": "CertificateArn"
+        }
+      }
+    },
+    "MyTopicRule": {
+      "Type": "AWS::IoT::TopicRule",
+      "DependsOn": [
+        "firehoseDeliveryPolicy"
+      ],
+      "Properties": {
+        "RuleName": "InitialRule",
+        "TopicRulePayload": {
+          "RuleDisabled": "false",
+          "Sql": "SELECT * FROM \"health\"",
+          "Actions": [
+            {
+              "Firehose": {
+                "DeliveryStreamName": {
+                  "Fn::ImportValue": "kinesis-iot-poc:sourceFirehose"
+                },
+                "RoleArn": {
+                  "Fn::GetAtt": [
+                    "IoTRuleRole",
+                    "Arn"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "85b64c97-6559-474d-afb3-06a8d3423573"
+        }
+      }
+    },
+    "IoTRuleRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "iot.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "ManagedPolicyArns": [
+          "arn:aws:iam::aws:policy/service-role/AWSIoTLogging"
+        ],
+        "Path": "/"
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "12364b18-de2c-4ea0-bd6a-6ecd13531c17"
+        }
+      }
+    },
+    "firehoseDeliveryPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "firehose_write_policy",
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "firehose:ListDeliveryStreams",
+                "firehose:PutRecord",
+                "firehose:PutRecordBatch"
+              ],
+              "Resource": [
+                "*"
+              ]
+            }
+          ]
+        },
+        "Roles": [
+          {
+            "Ref": "IoTRuleRole"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "72cfcf9f-d5ce-475d-8034-2c87d76c3f3a"
+        }
+      }
+    }
+  },
+  "Parameters": {
+    "CertificateArn": {
+      "Type": "String",
+      "Description": "Specify the Certificate ARN, previously created from AWS IoT",
+      "AllowedPattern": "arn:aws:iot:([a-z]{2}-[a-z]+-\\d{1})?:(\\d{12})?:cert/(.*)",
+      "ConstraintDescription": "must be an AWS ARN, and must represent an IoT certificate"
+    }
+  },
+  "Metadata": {
+    "AWS::CloudFormation::Designer": {
+      "85b64c97-6559-474d-afb3-06a8d3423573": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 60,
+          "y": 90
+        },
+        "z": 1,
+        "embeds": [],
+        "dependson": [
+          "12364b18-de2c-4ea0-bd6a-6ecd13531c17",
+          "72cfcf9f-d5ce-475d-8034-2c87d76c3f3a"
+        ],
+        "isrelatedto": [
+          "12364b18-de2c-4ea0-bd6a-6ecd13531c17"
+        ]
+      },
+      "5bad84cf-2b87-4876-ab46-6d48f4f4c499": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 290,
+          "y": 90
+        },
+        "z": 1,
+        "embeds": []
+      },
+      "1e0c7b7b-70bb-4499-ae3e-86ba97c881df": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 60,
+          "y": 210
+        },
+        "z": 1,
+        "embeds": []
+      },
+      "12364b18-de2c-4ea0-bd6a-6ecd13531c17": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 180,
+          "y": 90
+        },
+        "z": 1,
+        "embeds": []
+      },
+      "2bd30d76-8d1a-4019-91b1-c1dcecf14881": {
+        "source": {
+          "id": "85b64c97-6559-474d-afb3-06a8d3423573"
+        },
+        "target": {
+          "id": "12364b18-de2c-4ea0-bd6a-6ecd13531c17"
+        },
+        "z": 2
+      },
+      "72cfcf9f-d5ce-475d-8034-2c87d76c3f3a": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 180,
+          "y": 210
+        },
+        "z": 1,
+        "embeds": [],
+        "isassociatedwith": [
+          "12364b18-de2c-4ea0-bd6a-6ecd13531c17"
+        ]
+      }
+    }
+  }
+}
