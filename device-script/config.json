@@ -1,0 +1,9 @@
+{
+  "host": "a2djj1dfjtly94.iot.us-east-1.amazonaws.com",
+  "port": 8883,
+  "clientId": "arn:aws:iot:us-east-1:467962167702:thing/BoxThing",
+  "thingName": "BoxThing",
+  "caCert": "./certs/ca-cert.pem",
+  "clientCert": "./certs/certificate.pem.crt",
+  "privateKey": "./certs/private.pem.key"
+}

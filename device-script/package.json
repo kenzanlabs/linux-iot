@@ -1,0 +1,25 @@
+{
+  "name": "iot-device",
+  "description": "AWS IoT Node.js SDK for Embedded Devices",
+  "version": "1.0.0",
+  "author": {
+    "name": "David Zuluaga",
+    "email": ""
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.2.0",
+    "systeminformation": "^3.33.0"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "start": "node . -F config.json",
+    "test": "node ./node_modules/gulp/bin/gulp.js test --verbose",
+    "browserize": "./scripts/browserize.sh",
+    "beautify": "node ./node_modules/gulp/bin/gulp.js beautify"
+  }
+}
