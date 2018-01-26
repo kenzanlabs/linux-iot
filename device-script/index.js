@@ -1,7 +1,7 @@
 'use strict';
 
 let awsIot = require('aws-iot-device-sdk');
-const systeminfo = require('systeminformation');
+const si = require('systeminformation');
 const cmdLineProcess = require('aws-iot-device-sdk/examples/lib/cmdline');
 
 function setTopBoxInit(args) {
@@ -26,7 +26,7 @@ function setTopBoxInit(args) {
         .on('connect', function () {
             // device.subscribe('topic_1');
             console.log('connect');
-            randomCall();
+            sendMetrics();
         });
 
     device
@@ -48,6 +48,23 @@ function setTopBoxInit(args) {
             });
             return randomCall();
         }, randomDelay);
+    }
+
+    function sendMetrics() {
+        let randomDelay = getRandomInt(200, 600, 0);
+
+        si.cpuTemperature()
+            .then((data => {
+
+            device.publish('health', JSON.stringify(data), {}, err => {
+                if (err) {
+                    console.log(`ERROR ${err}`);
+                    return process.exit(1);
+                }
+                setTimeout(sendMetrics, randomDelay);
+            });
+
+        }));
     }
 }
 
