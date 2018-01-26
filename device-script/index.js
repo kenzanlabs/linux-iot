@@ -55,8 +55,9 @@ function setTopBoxInit(args) {
 
         si.cpuTemperature()
             .then((data => {
-                console.log(`temperature: ${data}`);
-                device.publish('health', JSON.stringify(data), {}, err => {
+                let datastring = JSON.stringify(data);
+                console.log(`Publishing temperature: ${datastring}`);
+                device.publish('health', JSON.stringify(datastring), {}, err => {
                     if (err) {
                         console.log(`ERROR ${err}`);
                         return process.exit(1);
