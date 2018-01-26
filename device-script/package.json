@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "aws-iot-device-sdk": "^2.2.0",
+    "osx-temperature-sensor": "^1.0.1",
     "systeminformation": "^3.33.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "node . -F config.json",
     "test": "node ./node_modules/gulp/bin/gulp.js test --verbose",
