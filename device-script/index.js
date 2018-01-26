@@ -55,16 +55,19 @@ function setTopBoxInit(args) {
 
         si.cpuTemperature()
             .then((data => {
+                console.log(`temperature: ${data}`);
+                device.publish('health', JSON.stringify(data), {}, err => {
+                    if (err) {
+                        console.log(`ERROR ${err}`);
+                        return process.exit(1);
+                    }
+                    setTimeout(sendMetrics, randomDelay);
+                });
 
-            device.publish('health', JSON.stringify(data), {}, err => {
-                if (err) {
-                    console.log(`ERROR ${err}`);
-                    return process.exit(1);
-                }
-                setTimeout(sendMetrics, randomDelay);
+            }))
+            .catch(err => {
+                console.log(`ERROR ${err}`);
             });
-
-        }));
     }
 }
 
