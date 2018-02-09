@@ -21,6 +21,7 @@ AWS root CA
 
 
 ### Running the IOT code
+Once you have the certificates renamed and placted in the device-scripts/certs directory you can start up the project. 
 ```
 cd device-scripts
 npm install
